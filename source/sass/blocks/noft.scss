@@ -53,13 +53,17 @@
     width: 100%;
   }
 
-  @media (max-width: 451px) {
-    margin-bottom: 15px;
-  }
-
   &:hover {
     transition: 0.5s;
     background-position: right 183px center;
+  }
+
+  @media (max-width: 451px) {
+    margin-bottom: 15px;
+    &:hover {
+      transition: 0.5s;
+      background-position: center;
+    }
   }
 }
 
