@@ -1,0 +1,38 @@
+.btn {
+  display: flex;
+  min-width: 203px;
+  min-height: 40px;
+  border-radius: 26px;
+  padding: 5px 20px;
+
+  color: #FFFFFF;
+
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  background: #33435F;
+  border: 1px solid #FFFFFF;
+  transition: 0.5s;
+
+  &:hover {
+    transition: 0.5s;
+    background: #365386;
+  }
+
+  &--red {
+    background: #FF284A;
+    margin-right: 10px;
+    border: none;
+
+    @media (max-width: 1160px) {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+
+    &:hover {
+      transition: 0.5s;
+      background: #ff284888;
+    }
+  }
+}

@@ -1,0 +1,94 @@
+.noft {
+  display: flex;
+  justify-content: center;
+}
+
+.noft img {
+  max-width: none;
+}
+
+.noft__chars {
+  margin-right: 20px;
+}
+
+.noft__char {
+  display: flex;
+  width: 183px;
+  height: 50px;
+  padding: 10px 10px;
+  border-radius: 100px;
+  margin-bottom: 35px;
+  background-color: red;
+  align-items: center;
+  text-align: left;
+  padding-left: 18px;
+
+  font-family: 'Proxima Nova';
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #FFFFFF;
+
+  transition: 0.5s;
+
+  &--power {  background-image: linear-gradient(66.37deg, #00FFE0 -15%, #333399 107.28%);  }
+  &--vision {  background-image: linear-gradient(66.37deg, #FD5917 -15%, #D435B8 107.28%);  }
+  &--speed {  background-image: linear-gradient(67.84deg, #ED1CB2 -1.82%, #5A21FC 106.59%);  }
+  &--agility {  background-image: linear-gradient(67.84deg, #00F260 -1.82%, #0575E6 106.59%);  }
+  &--vitality {  background-image: linear-gradient(66.37deg, #FF00A8 -15%, #0000FF 107.28%);  }
+  &--luck {  background-image: linear-gradient(66.37deg, #F7FF00 -15%, #DB36A4 107.28%);  }
+
+  @media (max-width: 580px) {
+    width: 100%;
+  }
+
+  &:hover {
+    transition: 0.5s;
+    background-position: right 183px center;
+  }
+}
+
+.noft__char-name {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  margin-right: 5px;
+  padding-left: 30px;
+
+  &::before {
+    @include pseudo;
+    top: -7px;
+    left: -10px;
+    width: 30px;
+    height: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.noft__char-name--power::before {  background-image: url("../img/svg/power.svg");  }
+.noft__char-name--vision::before  {  background-image: url("../img/svg/vision.svg");  }
+.noft__char-name--speed::before  {  background-image: url("../img/svg/speed.svg");  }
+.noft__char-name--agility::before  {  background-image: url("../img/svg/agility.svg");  }
+.noft__char-name--vitality::before  {  background-image: url("../img/svg/vitality.svg");  }
+.noft__char-name--luck::before  {  background-image: url("../img/svg/luck.svg");  }
+
+.noft__char-max {
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 300;
+}
+
+.noft__name {
+  font-family: Oxanium;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 37px;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  color: #FFFFFF;
+}

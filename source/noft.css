@@ -1,0 +1,94 @@
+@-webkit-keyframes levitate{
+  0% {  transform: translateY(0);  }
+  50% {  transform: translateY(-10px);  }
+  100% {  transform: translateY(0);  }
+}
+
+.noft__wrapper {
+  animation: levitate 3s infinite;
+  transition: all 1s;
+}
+
+.noft__wrapper:hover {
+  animation-play-state: paused;
+}
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+:root {
+  --noft__avatar-height: 355px;
+  --noft__avatar-width: 476px;
+}
+
+.noft__avatar {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180.04deg, #2E518D 0.04%, #222d49 102.34%);
+  width: 355px;
+  height: 476px;
+  position: relative;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+@media (max-width: 580px) {
+  .noft__avatar {
+    width: 260px;
+  }
+}
+
+.noft__avatar:hover {
+  color: rgb(88 199 250 / 100%);
+  transition: color 1s;
+}
+
+.noft__avatar:hover:before, .noft__avatar:hover:after {
+  animation: none;
+  opacity: 0;
+}
+
+.noft__avatar::before {
+  content: "";
+  width: 120%;
+  height: 120%;
+  border-radius: 100px;
+  position: absolute;
+  z-index: -1;
+  top: -1%;
+  left: -2%;
+  animation: spin 2.5s linear infinite;
+}
+
+.noft__avatar::after {
+  position: absolute;
+  content: "";
+  top: -30px;
+  left: -20px;
+  right: 0;
+  z-index: -1;
+  height: 110%;
+  width: 110%;
+  margin: 0 auto;
+  transform: scale(0.85);
+  filter: blur(calc(var(--noft__avatar-height) / 15));
+  background-image: linear-gradient(var(--rotate), #0d3d4b, #3c67e3 50%, rgba(0, 71, 255, 0.5));
+  opacity: 1;
+  transition: opacity .5s;
+  animation: spin 2.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
