@@ -45,7 +45,10 @@
 
   &--closed {
     top: -1000px;
-    transition: 0.5s;
+    right: 25px;
+    transition: 1.5s;
+    z-index: 10;
+    opacity: 1;
 
     @media (min-width: 641px) {
       position: relative;
